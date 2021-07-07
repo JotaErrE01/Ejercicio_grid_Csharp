@@ -1,0 +1,12 @@
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\bin\Debug\05-ejercicio-clase.exe.config
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\bin\Debug\05-ejercicio-clase.exe
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\bin\Debug\05-ejercicio-clase.pdb
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.csproj.AssemblyReference.cache
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.frmBecaInternacional.resources
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.Properties.Resources.resources
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.csproj.GenerateResource.cache
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.exe
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.pdb
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.view.frmMenu.resources
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.view.frmListar.resources
