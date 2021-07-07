@@ -13,15 +13,17 @@ namespace _05_ejercicio_clase.controller{
         ValidacionJARR validacion = null;
         Beca beca = null;
 
+        internal List<Beca> Lista { get => lista; set => lista = value; }
+
         private AdmBecaInternacionalJARR() {
-            lista = new List<Beca>();
+            Lista = new List<Beca>();
             validacion = new ValidacionJARR();
         }
 
         internal void LLenarGrid(DataGridView dgvBecas, Label lblTotal){
             BecaInternacional bi = null;
             int i = 1;
-            lista.ForEach(beca => {
+            Lista.ForEach(beca => {
                 if(beca.GetType() == typeof(BecaInternacional)){
                     bi = (BecaInternacional)beca;
                     dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
@@ -43,9 +45,7 @@ namespace _05_ejercicio_clase.controller{
             if(!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(universidad) && !string.IsNullOrEmpty(monto) && !string.IsNullOrEmpty(pais) && !string.IsNullOrEmpty(tiempo) && fecha!=null && validacion.EsReal(monto)) {
 
                 return true;
-
             }
-
                 return false;
         }
 
@@ -54,14 +54,22 @@ namespace _05_ejercicio_clase.controller{
             BecaInternacional becaInternacional = null;
             double dMonto = validacion.AReal(monto);
             int iTiempo = validacion.AEntero(tiempo);
-            becaInternacional = new BecaInternacional(nombre, cedula, universidad, monto, dMonto, iTiempo, fecha);
-            lista.Add(becaInternacional);
+            becaInternacional = new BecaInternacional(nombre, cedula, pais, universidad, dMonto, iTiempo, fecha);
+            Lista.Add(becaInternacional);
+        }
+
+        internal void agregarInternacional(ListBox lstInternacional, int indice){
+            beca = lista[indice]  ;
+            lstInternacional.Items.Add(beca.Cedula);
+
+            //if(beca.GetType() == typeof(BecaNacional)) {
+
+            //}else{
+            //}
         }
 
         internal void Agregar(TextBox txtContenido) {
-
-            txtContenido.Text += lista[lista.Count - 1].ToString();
-
+            txtContenido.Text += Lista[Lista.Count - 1].ToString();
         }
 
     }

@@ -35,6 +35,7 @@ namespace _05_ejercicio_clase.view
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniVisualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@ namespace _05_ejercicio_clase.view
             this.becaInternacionalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniRegistrar,
             this.listarToolStripMenuItem,
+            this.mniVisualizar,
             this.eliminarToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.becaInternacionalToolStripMenuItem.Name = "becaInternacionalToolStripMenuItem";
@@ -86,6 +88,13 @@ namespace _05_ejercicio_clase.view
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // mniVisualizar
+            // 
+            this.mniVisualizar.Name = "mniVisualizar";
+            this.mniVisualizar.Size = new System.Drawing.Size(180, 22);
+            this.mniVisualizar.Text = "Visualizar";
+            this.mniVisualizar.Click += new System.EventHandler(this.mniVisualizar_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +102,7 @@ namespace _05_ejercicio_clase.view
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenucs";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -109,5 +119,6 @@ namespace _05_ejercicio_clase.view
         private System.Windows.Forms.ToolStripMenuItem listarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mniVisualizar;
     }
 }

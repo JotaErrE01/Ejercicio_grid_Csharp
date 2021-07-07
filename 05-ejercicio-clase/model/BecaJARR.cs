@@ -6,7 +6,7 @@ namespace _05_ejercicio_clase{
         private double monto;
         private int tiempoEstudio;
 
-        public Beca(string cedula, string nombre, string universidad, double monto, int tiempoEstudio){
+        public Beca(string nombre, string cedula, string universidad, double monto, int tiempoEstudio){
             this.cedula = cedula;
             this.nombre = nombre;
             this.universidad = universidad;
@@ -31,7 +31,7 @@ namespace _05_ejercicio_clase{
         }
 
         public override string ToString(){
-            return "\nCedula: " + cedula + "\nNombre: " + nombre + "\nUniversidad: " + universidad + "\nMonto: " + monto + "\nTiempo de estudio: " + tiempoEstudio;
+            return "\nCedula: " + cedula + "\r\nNombre: " + nombre + "\r\nUniversidad: " + universidad + "\r\nMonto: " + monto + "\r\nTiempo de estudio: " + tiempoEstudio;
         }
 
         public virtual string Conferencia () {

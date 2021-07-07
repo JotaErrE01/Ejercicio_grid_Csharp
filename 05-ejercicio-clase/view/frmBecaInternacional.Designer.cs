@@ -228,6 +228,7 @@ namespace _05_ejercicio_clase
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "frmBecaInternacional";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beca Internacional";
             this.ResumeLayout(false);
             this.PerformLayout();

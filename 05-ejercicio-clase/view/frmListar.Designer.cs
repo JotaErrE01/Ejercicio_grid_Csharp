@@ -138,6 +138,7 @@ namespace _05_ejercicio_clase.view
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBecas);
             this.Name = "frmListar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmListar";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecas)).EndInit();
             this.ResumeLayout(false);

@@ -23,12 +23,17 @@ namespace _05_ejercicio_clase.view
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e){
-            //Syste
+            Application.Exit();
         }
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e){
             frmListar listar = new frmListar();
             listar.ShowDialog();
+        }
+
+        private void mniVisualizar_Click(object sender, EventArgs e){
+            frmVisualizarBecas frm = new frmVisualizarBecas();
+            frm.ShowDialog();
         }
     }
 }

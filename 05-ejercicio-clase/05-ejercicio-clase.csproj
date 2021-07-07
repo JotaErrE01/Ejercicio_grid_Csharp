@@ -69,6 +69,12 @@
     <Compile Include="view\frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\frmVisualizarBecas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\frmVisualizarBecas.Designer.cs">
+      <DependentUpon>frmVisualizarBecas.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="view\frmBecaInternacional.resx">
@@ -82,12 +88,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="view\frmListar.resx">
       <DependentUpon>frmListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\frmVisualizarBecas.resx">
+      <DependentUpon>frmVisualizarBecas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +112,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="image\storm-dragon-lee-sin-splash-art-8k-league-of-legends-lol-papel-pintado-3840x2400_9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Zed-Galaxy-Slayer-nueva-skin_1233486646_144129_1440x600.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

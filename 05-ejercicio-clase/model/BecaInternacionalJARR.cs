@@ -11,7 +11,7 @@ namespace _05_ejercicio_clase{
 
         public DateTime FechaViajeIda { get => fechaViajeIda; set => fechaViajeIda = value; }
 
-        public BecaInternacional(string pais, string cedula, string nombre, string universidad, double monto, int tiempoEstudio, DateTime fechaViajeIda) : base(cedula, nombre, universidad, monto, tiempoEstudio){
+        public BecaInternacional(string nombre, string cedula, string pais, string universidad, double monto, int tiempoEstudio, DateTime fechaViajeIda) : base(nombre, cedula, universidad, monto, tiempoEstudio){
             this.pais = pais;
             this.fechaViajeIda = fechaViajeIda;
         }
