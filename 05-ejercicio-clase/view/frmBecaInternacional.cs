@@ -22,9 +22,11 @@ namespace _05_ejercicio_clase{
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e){
             char c = e.KeyChar;
             if (!char.IsDigit(c) && (e.KeyChar!=Convert.ToChar(Keys.Back))){
+                erpcedula.SetError(txtCedula, "Solo Ingrese numeros");
                 e.Handled = true;
                 return;
             }
+            erpcedula.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e){

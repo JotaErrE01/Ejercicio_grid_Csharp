@@ -1,5 +1,7 @@
 namespace _05_ejercicio_clase{
     class Beca{
+
+        private string ruta;
         private string cedula;
         private string nombre;
         private string universidad;

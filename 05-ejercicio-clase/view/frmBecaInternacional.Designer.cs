@@ -29,6 +29,7 @@ namespace _05_ejercicio_clase
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +46,8 @@ namespace _05_ejercicio_clase
             this.cmbUniversidad = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtArea = new System.Windows.Forms.TextBox();
+            this.erpcedula = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.erpcedula)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -206,6 +209,10 @@ namespace _05_ejercicio_clase
             this.txtArea.Size = new System.Drawing.Size(345, 148);
             this.txtArea.TabIndex = 18;
             // 
+            // erpcedula
+            // 
+            this.erpcedula.ContainerControl = this;
+            // 
             // frmBecaInternacional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +237,7 @@ namespace _05_ejercicio_clase
             this.Name = "frmBecaInternacional";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Beca Internacional";
+            ((System.ComponentModel.ISupportInitialize)(this.erpcedula)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,6 +260,7 @@ namespace _05_ejercicio_clase
         private System.Windows.Forms.ComboBox cmbUniversidad;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtArea;
+        private System.Windows.Forms.ErrorProvider erpcedula;
     }
 }
 
