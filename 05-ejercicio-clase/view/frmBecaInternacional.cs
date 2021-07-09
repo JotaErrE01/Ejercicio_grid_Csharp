@@ -36,11 +36,12 @@ namespace _05_ejercicio_clase{
 
                 admBecaInternacional.Guardar(nombre, cedula, universidad, monto, pais, tiempo, fecha, rdbNacional, rutaImagen);
                 admBecaInternacional.Agregar(txtArea);
-                //erpGuardar.Clear();
+                erpGuardar.Clear();
+
             }
-            //else{
-            //    erpGuardar.SetError(btnGuardar, "No deben haber campos vacios");
-            //}
+            else{
+                admBecaInternacional.Error(txtNombre, txtCedula, cmbUniversidad, txtMonto, cmbPaisCiudad, txtTiempoEstudio, pbImage, erpGuardar);
+            }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e){

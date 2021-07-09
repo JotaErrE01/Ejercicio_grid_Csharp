@@ -29,6 +29,7 @@ namespace _05_ejercicio_clase
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,8 +52,10 @@ namespace _05_ejercicio_clase
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.ofdSeleccionar = new System.Windows.Forms.OpenFileDialog();
+            this.erpGuardar = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGuardar)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -265,11 +268,15 @@ namespace _05_ejercicio_clase
             // 
             this.ofdSeleccionar.FileName = "openFileDialog1";
             // 
+            // erpGuardar
+            // 
+            this.erpGuardar.ContainerControl = this;
+            // 
             // frmBecaInternacional
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(828, 450);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.groupBox1);
@@ -295,6 +302,7 @@ namespace _05_ejercicio_clase
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGuardar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +331,7 @@ namespace _05_ejercicio_clase
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.OpenFileDialog ofdSeleccionar;
+        private System.Windows.Forms.ErrorProvider erpGuardar;
     }
 }
 

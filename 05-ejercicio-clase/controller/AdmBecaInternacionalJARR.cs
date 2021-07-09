@@ -46,14 +46,51 @@ namespace _05_ejercicio_clase.controller{
 
                 return true;
             }
-                return false;
+
+            return false;
+        }
+
+        internal void Error(TextBox txtNombre, TextBox txtCedula, ComboBox cmbUniversidad, TextBox txtMonto, ComboBox cmbPaisCiudad, TextBox txtTiempoEstudio, PictureBox imageLocation, ErrorProvider erpGuardar)
+        {
+            
+            if (txtNombre.Text == "") {
+                erpGuardar.SetError(txtNombre, "No deben haber campos vacios");
+            }
+
+            if (txtCedula.Text == ""){
+                erpGuardar.SetError(txtCedula, "No deben haber campos vacios");
+            }
+
+            if (cmbUniversidad.Text == ""){
+                erpGuardar.SetError(cmbUniversidad, "No deben haber campos vacios");
+            }
+
+            if (txtMonto.Text == ""){
+                erpGuardar.SetError(txtMonto, "No deben haber campos vacios");
+            }
+
+            if (txtMonto.Text == ""){
+                erpGuardar.SetError(txtMonto, "No deben haber campos vacios");
+            }
+
+            if (cmbPaisCiudad.Text == ""){
+                erpGuardar.SetError(cmbPaisCiudad, "No deben haber campos vacios");
+            }
+
+            if (txtTiempoEstudio.Text == ""){
+                erpGuardar.SetError(txtTiempoEstudio, "No deben haber campos vacios");
+            }
+
+            if (imageLocation.ImageLocation == null){
+                erpGuardar.SetError(imageLocation, "Debe existir una imagen");
+            }
+
         }
 
         internal void Guardar(string nombre, string cedula, string universidad, string monto, string pais, string tiempo, DateTime fecha, RadioButton rdbNacional, string rutaImagen) {
 
             if (rdbNacional.Checked) {
 
-                //BecaNacional becaNacional = null;
                 double dMonto = validacion.AReal(monto);
                 int iTiempo = validacion.AEntero(tiempo);
                 BecaNacional becaNacional = new BecaNacional(nombre, cedula, pais, universidad, dMonto, iTiempo, rutaImagen);
@@ -62,7 +99,6 @@ namespace _05_ejercicio_clase.controller{
 
             }else {
 
-                //BecaInternacional becaInternacional = null;
                 double dMonto = validacion.AReal(monto);
                 int iTiempo = validacion.AEntero(tiempo);
                 BecaInternacional becaInternacional = new BecaInternacional(nombre, cedula, pais, universidad, dMonto, iTiempo, fecha, rutaImagen);
