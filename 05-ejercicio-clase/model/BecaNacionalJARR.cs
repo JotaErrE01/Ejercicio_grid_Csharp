@@ -5,16 +5,16 @@ namespace _05_ejercicio_clase{
 
         public string Ciudad { get => ciudad; set => ciudad = value; }
 
-        public BecaNacional(): base("000000", "S/N", "Universidad de Guayaquil", 100, 10){
-            Ciudad = "Guayaquil";
-        }
+        //public BecaNacional(): base("000000", "S/N", "Universidad de Guayaquil", 100, 10){
+        //    Ciudad = "Guayaquil";
+        //}
 
-        public BecaNacional(string ciudad, string cedula, string nombre, string universidad, double monto, int tiempoEstudio) : base(cedula, nombre, universidad, monto, tiempoEstudio){
+        public BecaNacional(string nombre, string cedula, string ciudad, string universidad, double monto, int tiempoEstudio, string ruta) : base(nombre, cedula, universidad, monto, tiempoEstudio, ruta){
             this.Ciudad = ciudad;
         }
 
         public override string ToString(){
-            return base.ToString() + "\nCiudad: " + Ciudad;
+            return $"{ base.ToString() }\r\nCiudad: {ciudad}\r\n";
         }
 
         public string Mensaje(){

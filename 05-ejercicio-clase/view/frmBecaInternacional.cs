@@ -17,28 +17,30 @@ namespace _05_ejercicio_clase{
 
         public frmBecaInternacional(){
             InitializeComponent();
+            admBecaInternacional.CambiarNacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
         }
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e){
             char c = e.KeyChar;
             if (!char.IsDigit(c) && (e.KeyChar!=Convert.ToChar(Keys.Back))){
-                erpcedula.SetError(txtCedula, "Solo Ingrese numeros");
                 e.Handled = true;
                 return;
             }
-            erpcedula.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e){
-            string nombre = txtNombre.Text.Trim(), cedula = txtCedula.Text, universidad = cmbUniversidad.Text, monto = txtMonto.Text, pais = cmbPais.Text, tiempo = txtTiempoEstudio.Text;
+            string nombre = txtNombre.Text.Trim(), cedula = txtCedula.Text, universidad = cmbUniversidad.Text, monto = txtMonto.Text, pais = cmbPaisCiudad.Text, tiempo = txtTiempoEstudio.Text, rutaImagen = pbImage.ImageLocation;
             DateTime fecha = dtpFechaViaje.Value.Date;
 
-            if (admBecaInternacional.EsCorrecto(nombre, cedula, universidad, monto, pais, tiempo, fecha)) {
+            if (admBecaInternacional.EsCorrecto(nombre, cedula, universidad, monto, pais, tiempo, fecha, rutaImagen)) {
 
-                admBecaInternacional.Guardar(nombre, cedula, universidad, monto, pais, tiempo, fecha);
+                admBecaInternacional.Guardar(nombre, cedula, universidad, monto, pais, tiempo, fecha, rdbNacional, rutaImagen);
                 admBecaInternacional.Agregar(txtArea);
-
+                //erpGuardar.Clear();
             }
+            //else{
+            //    erpGuardar.SetError(btnGuardar, "No deben haber campos vacios");
+            //}
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e){
@@ -54,6 +56,28 @@ namespace _05_ejercicio_clase{
             if (!char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back)) && c != '.'){
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void rdbNacional_CheckedChanged(object sender, EventArgs e){
+            admBecaInternacional.CambiarNacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
+            dtpFechaViaje.Enabled = false;
+        }
+
+        private void rdbInternacional_CheckedChanged(object sender, EventArgs e){
+            admBecaInternacional.CambiarInternacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
+            dtpFechaViaje.Enabled = true;
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e){
+            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
+            ofdSeleccionar.Filter = "FotoPerfil|*.jpg; *.png";
+            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ofdSeleccionar.Title = "Seleccionar Imagen";
+
+            if (ofdSeleccionar.ShowDialog() == DialogResult.OK){
+                //pbImage.Image = Image.FromFile(ofdSeleccionar.FileName);
+                pbImage.ImageLocation = ofdSeleccionar.FileName;
             }
         }
     }

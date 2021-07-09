@@ -53,7 +53,7 @@ namespace _05_ejercicio_clase.view
         private void btnAgregar_Click(object sender, EventArgs e){
             int indice = cmbBecas.SelectedIndex;
             if ( indice >= 0 ) {
-                adm.agregarInternacional(lstInternacional, indice);
+                adm.agregarInternacional(lstNacional, lstInternacional, indice);
             }
         }
     }

@@ -11,13 +11,13 @@ namespace _05_ejercicio_clase{
 
         public DateTime FechaViajeIda { get => fechaViajeIda; set => fechaViajeIda = value; }
 
-        public BecaInternacional(string nombre, string cedula, string pais, string universidad, double monto, int tiempoEstudio, DateTime fechaViajeIda) : base(nombre, cedula, universidad, monto, tiempoEstudio){
+        public BecaInternacional(string nombre, string cedula, string pais, string universidad, double monto, int tiempoEstudio, DateTime fechaViajeIda, string ruta) : base(nombre, cedula, universidad, monto, tiempoEstudio, ruta){
             this.pais = pais;
             this.fechaViajeIda = fechaViajeIda;
         }
 
         public override string ToString(){
-            return base.ToString() + $"\r\nPais: {pais}\r\nFecha de viaje de Ida: {FechaViajeIda.ToShortDateString()}";
+            return $"{base.ToString()}\r\nPais: {pais}\r\nFecha de viaje de Ida: {FechaViajeIda.ToShortDateString()}\r\n";
         }
 
         public override string Conferencia(){

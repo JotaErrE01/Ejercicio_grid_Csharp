@@ -8,12 +8,13 @@ namespace _05_ejercicio_clase{
         private double monto;
         private int tiempoEstudio;
 
-        public Beca(string nombre, string cedula, string universidad, double monto, int tiempoEstudio){
+        public Beca(string nombre, string cedula, string universidad, double monto, int tiempoEstudio, string ruta){
             this.cedula = cedula;
             this.nombre = nombre;
             this.universidad = universidad;
             this.monto = monto;
             this.tiempoEstudio = tiempoEstudio;
+            this.ruta = ruta;
         }
 
         public string Cedula { get => cedula; set => cedula = value; }
@@ -21,6 +22,7 @@ namespace _05_ejercicio_clase{
         public string Universidad { get => universidad; set => universidad = value; }
         public double Monto { get => monto; set => monto = value; }
         public int TiempoEstudio { get => tiempoEstudio; set => tiempoEstudio = value; }
+        public string Ruta { get => ruta; set => ruta = value; }
 
         public double MontoPago(int partes) {
             // double x = 0.0;
@@ -33,7 +35,7 @@ namespace _05_ejercicio_clase{
         }
 
         public override string ToString(){
-            return "\nCedula: " + cedula + "\r\nNombre: " + nombre + "\r\nUniversidad: " + universidad + "\r\nMonto: " + monto + "\r\nTiempo de estudio: " + tiempoEstudio;
+            return $"Cedula: {cedula}\r\nNombre: {nombre}\r\nUniversidad: {universidad}\r\nMonto: {monto}\r\r\nTiempo Estudio: {tiempoEstudio}\r\nRuta Imagen: {ruta}";
         }
 
         public virtual string Conferencia () {
