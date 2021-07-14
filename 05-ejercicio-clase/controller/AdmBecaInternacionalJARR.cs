@@ -22,15 +22,70 @@ namespace _05_ejercicio_clase.controller{
 
         internal void LLenarGrid(DataGridView dgvBecas, Label lblTotal){
             BecaInternacional bi = null;
-            int i = 1;
+            BecaNacional bn = null;
+            int i = 0;
             Lista.ForEach(beca => {
                 if(beca.GetType() == typeof(BecaInternacional)){
                     bi = (BecaInternacional)beca;
                     dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
-                    i++;
+                }else if (beca.GetType() == typeof(BecaNacional)){
+                    bn = (BecaNacional)beca;
+                    dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
                 }
-                lblTotal.Text = i + "";
+                i++;
             });
+            lblTotal.Text = i + "";
+        }
+
+        internal void filtrar(string lugar, string monto, DataGridView dgvBecas, int v){
+            ValidacionJARR val = new ValidacionJARR();
+            int i = 1;
+            double dmonto = val.AReal(monto);
+            BecaInternacional bi = null;
+            BecaNacional bn = null;
+
+            lista.ForEach(beca => {
+                if (beca.Monto >= dmonto){
+                    if (v == 1)
+                    {
+                        if (beca.GetType() == typeof(BecaNacional))
+                        {
+                            bn = (BecaNacional)beca;
+                            dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
+                        }
+                    }
+                    else if (v == 2)
+                    {
+                        if (beca.GetType() == typeof(BecaInternacional))
+                        {
+                            bi = (BecaInternacional)beca;
+                            dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
+                        }
+                    }
+                    else if (v == 0)
+                    {
+                        if (beca.GetType() == typeof(BecaNacional))
+                        {
+                            bn = (BecaNacional)beca;
+                            dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
+                        }
+
+                        if (beca.GetType() == typeof(BecaInternacional))
+                        {
+                            bi = (BecaInternacional)beca;
+                            dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
+                        }
+                    }
+                }
+                i++;
+            });
+        }
+
+        internal void Eliminar(DataGridView dgvBecas, int posicion, Label lblTotal)
+        {
+            dgvBecas.Rows.RemoveAt(posicion);//eliminando de la tabla
+            lista.RemoveAt(posicion);//eliminando de la lista
+            lblTotal.Text = lista.Count + "";
         }
 
         public static AdmBecaInternacionalJARR GetAdm() {

@@ -33,9 +33,10 @@ namespace _05_ejercicio_clase.view
             this.becaInternacionalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mniRegistrar = new System.Windows.Forms.ToolStripMenuItem();
             this.listarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniVisualizar = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniVisualizar = new System.Windows.Forms.ToolStripMenuItem();
+            this.filtrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@ namespace _05_ejercicio_clase.view
             this.mniRegistrar,
             this.listarToolStripMenuItem,
             this.mniVisualizar,
+            this.filtrarToolStripMenuItem,
             this.eliminarToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.becaInternacionalToolStripMenuItem.Name = "becaInternacionalToolStripMenuItem";
@@ -64,7 +66,7 @@ namespace _05_ejercicio_clase.view
             // mniRegistrar
             // 
             this.mniRegistrar.Name = "mniRegistrar";
-            this.mniRegistrar.Size = new System.Drawing.Size(180, 22);
+            this.mniRegistrar.Size = new System.Drawing.Size(202, 22);
             this.mniRegistrar.Text = "Registrar";
             this.mniRegistrar.Click += new System.EventHandler(this.mniRegistrar_Click);
             // 
@@ -75,25 +77,33 @@ namespace _05_ejercicio_clase.view
             this.listarToolStripMenuItem.Text = "Listar";
             this.listarToolStripMenuItem.Click += new System.EventHandler(this.listarToolStripMenuItem_Click);
             // 
+            // mniVisualizar
+            // 
+            this.mniVisualizar.Name = "mniVisualizar";
+            this.mniVisualizar.Size = new System.Drawing.Size(202, 22);
+            this.mniVisualizar.Text = "Visualizar";
+            this.mniVisualizar.Click += new System.EventHandler(this.mniVisualizar_Click);
+            // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
+            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // mniVisualizar
+            // filtrarToolStripMenuItem
             // 
-            this.mniVisualizar.Name = "mniVisualizar";
-            this.mniVisualizar.Size = new System.Drawing.Size(180, 22);
-            this.mniVisualizar.Text = "Visualizar";
-            this.mniVisualizar.Click += new System.EventHandler(this.mniVisualizar_Click);
+            this.filtrarToolStripMenuItem.Name = "filtrarToolStripMenuItem";
+            this.filtrarToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.filtrarToolStripMenuItem.Text = "Filtrar";
+            this.filtrarToolStripMenuItem.Click += new System.EventHandler(this.filtrarToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -120,5 +130,6 @@ namespace _05_ejercicio_clase.view
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mniVisualizar;
+        private System.Windows.Forms.ToolStripMenuItem filtrarToolStripMenuItem;
     }
 }

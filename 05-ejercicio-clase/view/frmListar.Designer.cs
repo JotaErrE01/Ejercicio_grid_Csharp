@@ -40,6 +40,7 @@ namespace _05_ejercicio_clase.view
             this.colFehcaV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@ namespace _05_ejercicio_clase.view
             this.dgvBecas.Location = new System.Drawing.Point(12, 12);
             this.dgvBecas.Name = "dgvBecas";
             this.dgvBecas.ReadOnly = true;
-            this.dgvBecas.Size = new System.Drawing.Size(822, 426);
+            this.dgvBecas.Size = new System.Drawing.Size(822, 364);
             this.dgvBecas.TabIndex = 0;
             // 
             // ColNro
@@ -129,17 +130,28 @@ namespace _05_ejercicio_clase.view
             this.lblTotal.TabIndex = 2;
             this.lblTotal.Text = "_________";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(63, 402);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(132, 39);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmListar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 481);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvBecas);
             this.Name = "frmListar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmListar";
+            this.Text = "Listar Estudiantes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,5 +171,6 @@ namespace _05_ejercicio_clase.view
         private System.Windows.Forms.DataGridViewTextBoxColumn colFehcaV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

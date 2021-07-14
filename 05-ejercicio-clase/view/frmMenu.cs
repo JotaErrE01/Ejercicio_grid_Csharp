@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _05_ejercicio_clase.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +11,10 @@ using System.Windows.Forms;
 
 namespace _05_ejercicio_clase.view
 {
-    public partial class frmMenu : Form
-    {
+    public partial class frmMenu : Form{
+
+        AdmBecaInternacionalJARR adm = AdmBecaInternacionalJARR.GetAdm();
+
         public frmMenu()
         {
             InitializeComponent();
@@ -34,6 +37,22 @@ namespace _05_ejercicio_clase.view
         private void mniVisualizar_Click(object sender, EventArgs e){
             frmVisualizarBecas frm = new frmVisualizarBecas();
             frm.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e){
+            if (adm.Lista.Count > 0){
+                frmListar listar = new frmListar();
+                listar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No existen registros de becas");
+            }
+        }
+
+        private void filtrarToolStripMenuItem_Click(object sender, EventArgs e){
+            FrmFiltrar filtar = new FrmFiltrar();
+            filtar.ShowDialog();
         }
     }
 }

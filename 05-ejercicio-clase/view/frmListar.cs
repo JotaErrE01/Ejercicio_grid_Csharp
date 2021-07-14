@@ -19,5 +19,12 @@ namespace _05_ejercicio_clase.view
             InitializeComponent();
             adm.LLenarGrid(dgvBecas, lblTotal);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e){
+            int posicion = dgvBecas.CurrentRow.Index; //indice de la fila seleccionada
+            if (posicion >= 0){
+                adm.Eliminar(dgvBecas, posicion, lblTotal);
+            }
+        }
     }
 }

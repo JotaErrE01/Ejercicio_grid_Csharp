@@ -57,6 +57,12 @@
     <Compile Include="view\frmBecaInternacional.Designer.cs">
       <DependentUpon>frmBecaInternacional.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmFiltrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmFiltrar.Designer.cs">
+      <DependentUpon>FrmFiltrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\frmListar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="view\FrmFiltrar.resx">
+      <DependentUpon>FrmFiltrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\frmListar.resx">
       <DependentUpon>frmListar.cs</DependentUpon>
     </EmbeddedResource>
