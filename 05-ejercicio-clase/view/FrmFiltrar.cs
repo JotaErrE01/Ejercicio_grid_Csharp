@@ -38,5 +38,29 @@ namespace _05_ejercicio_clase.view
             }
 
         }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e){
+            char c = e.KeyChar;
+            if (!char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back)) && c != '.'){
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCiudadPais_KeyPress(object sender, KeyPressEventArgs e){
+            char c = e.KeyChar;
+            if (!char.IsLetter(c) && (e.KeyChar != Convert.ToChar(Keys.Back)) && c != ' '){
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void rdbInternacional_CheckedChanged(object sender, EventArgs e){
+            txtCiudadPais.Enabled = true;
+        }
+
+        private void rdbNacional_CheckedChanged(object sender, EventArgs e){
+            txtCiudadPais.Enabled = false;
+        }
     }
 }

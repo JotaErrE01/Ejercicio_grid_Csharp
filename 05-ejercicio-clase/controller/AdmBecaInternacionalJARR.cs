@@ -23,7 +23,7 @@ namespace _05_ejercicio_clase.controller{
         internal void LLenarGrid(DataGridView dgvBecas, Label lblTotal){
             BecaInternacional bi = null;
             BecaNacional bn = null;
-            int i = 0;
+            int i = 1;
             Lista.ForEach(beca => {
                 if(beca.GetType() == typeof(BecaInternacional)){
                     bi = (BecaInternacional)beca;
@@ -38,6 +38,16 @@ namespace _05_ejercicio_clase.controller{
         }
 
         internal void filtrar(string lugar, string monto, DataGridView dgvBecas, int v){
+
+            //validar campos vacios
+            if (monto == "" && lugar == "") return;
+
+            //validar si el monto es real
+            if (!validacion.EsReal(monto)) return;
+
+            //limpiar tabla
+            dgvBecas.Rows.Clear();
+
             ValidacionJARR val = new ValidacionJARR();
             int i = 1;
             double dmonto = val.AReal(monto);
@@ -46,26 +56,24 @@ namespace _05_ejercicio_clase.controller{
 
             lista.ForEach(beca => {
                 if (beca.Monto >= dmonto){
-                    if (v == 1)
-                    {
-                        if (beca.GetType() == typeof(BecaNacional))
-                        {
+                    if (v == 1){
+                        if (beca.GetType() == typeof(BecaNacional)){
                             bn = (BecaNacional)beca;
-                            dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
+                            if(bn.Ciudad == lugar) {
+                                dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
+                            }
                         }
                     }
-                    else if (v == 2)
-                    {
-                        if (beca.GetType() == typeof(BecaInternacional))
-                        {
+                    else if (v == 2){
+                        if (beca.GetType() == typeof(BecaInternacional)){
                             bi = (BecaInternacional)beca;
-                            dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
+                            if(bi.Pais == lugar) { 
+                                dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
+                            }
                         }
                     }
-                    else if (v == 0)
-                    {
-                        if (beca.GetType() == typeof(BecaNacional))
-                        {
+                    else if (v == 0){
+                        if (beca.GetType() == typeof(BecaNacional)){
                             bn = (BecaNacional)beca;
                             dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
                         }
@@ -79,6 +87,31 @@ namespace _05_ejercicio_clase.controller{
                 }
                 i++;
             });
+        }
+
+        internal void CantidadInternacional(Label lblInternacional){
+            int counter = 0;
+
+            lista.ForEach(beca => {
+                if (beca.GetType() == typeof(BecaInternacional)){
+                    counter++;
+                }
+            });
+
+            lblInternacional.Text = $"{counter}";
+        }
+
+        internal void CantidadNacional(Label lblNacional){
+
+            int counter = 0;
+
+            lista.ForEach( beca => {
+                if ( beca.GetType() == typeof(BecaNacional) ) {
+                    counter++;
+                }
+            });
+
+            lblNacional.Text = $"{counter}";
         }
 
         internal void Eliminar(DataGridView dgvBecas, int posicion, Label lblTotal)

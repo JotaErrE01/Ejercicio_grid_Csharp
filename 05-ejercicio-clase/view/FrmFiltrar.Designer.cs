@@ -34,11 +34,6 @@ namespace _05_ejercicio_clase.view
             this.rdbNacional = new System.Windows.Forms.RadioButton();
             this.rdbInternacional = new System.Windows.Forms.RadioButton();
             this.dgvBecas = new System.Windows.Forms.DataGridView();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCiudadPais = new System.Windows.Forms.TextBox();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +42,11 @@ namespace _05_ejercicio_clase.view
             this.colMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaEs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFehcaV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCiudadPais = new System.Windows.Forms.TextBox();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBecas)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +86,7 @@ namespace _05_ejercicio_clase.view
             this.rdbNacional.TabStop = true;
             this.rdbNacional.Text = "Nacional";
             this.rdbNacional.UseVisualStyleBackColor = true;
+            this.rdbNacional.CheckedChanged += new System.EventHandler(this.rdbNacional_CheckedChanged);
             // 
             // rdbInternacional
             // 
@@ -96,6 +97,7 @@ namespace _05_ejercicio_clase.view
             this.rdbInternacional.TabIndex = 1;
             this.rdbInternacional.Text = "Internacional";
             this.rdbInternacional.UseVisualStyleBackColor = true;
+            this.rdbInternacional.CheckedChanged += new System.EventHandler(this.rdbInternacional_CheckedChanged);
             // 
             // dgvBecas
             // 
@@ -116,52 +118,6 @@ namespace _05_ejercicio_clase.view
             this.dgvBecas.ReadOnly = true;
             this.dgvBecas.Size = new System.Drawing.Size(704, 208);
             this.dgvBecas.TabIndex = 4;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(572, 112);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(117, 32);
-            this.btnFiltrar.TabIndex = 5;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Ciudad/Pais:";
-            // 
-            // txtCiudadPais
-            // 
-            this.txtCiudadPais.Location = new System.Drawing.Point(146, 124);
-            this.txtCiudadPais.MaxLength = 10;
-            this.txtCiudadPais.Name = "txtCiudadPais";
-            this.txtCiudadPais.Size = new System.Drawing.Size(120, 20);
-            this.txtCiudadPais.TabIndex = 11;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(402, 123);
-            this.txtMonto.MaxLength = 10;
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(120, 20);
-            this.txtMonto.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Monto:";
             // 
             // ColNro
             // 
@@ -210,6 +166,54 @@ namespace _05_ejercicio_clase.view
             this.colFehcaV.HeaderText = "Fecha de Viaje";
             this.colFehcaV.Name = "colFehcaV";
             this.colFehcaV.ReadOnly = true;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(572, 112);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(117, 32);
+            this.btnFiltrar.TabIndex = 5;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(43, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Ciudad/Pais:";
+            // 
+            // txtCiudadPais
+            // 
+            this.txtCiudadPais.Location = new System.Drawing.Point(146, 124);
+            this.txtCiudadPais.MaxLength = 10;
+            this.txtCiudadPais.Name = "txtCiudadPais";
+            this.txtCiudadPais.Size = new System.Drawing.Size(120, 20);
+            this.txtCiudadPais.TabIndex = 11;
+            this.txtCiudadPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCiudadPais_KeyPress);
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(402, 123);
+            this.txtMonto.MaxLength = 10;
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(120, 20);
+            this.txtMonto.TabIndex = 13;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(320, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Monto:";
             // 
             // FrmFiltrar
             // 

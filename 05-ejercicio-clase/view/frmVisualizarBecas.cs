@@ -36,14 +36,17 @@ namespace _05_ejercicio_clase.view
         private void chkNacional_CheckedChanged(object sender, EventArgs e){
             if (chkNacional.Checked) {
                 lblNacional.Text = adm.Lista.Count - 1 + "";
-            }else{
+                adm.CantidadNacional(lblNacional);
+            }
+            else{
                 lblNacional.Text = "______________";
             }
         }
 
         private void chkInternacional_CheckedChanged(object sender, EventArgs e){
             if (chkInternacional.Checked){
-                lblInternacional.Text = adm.Lista.Count + "";
+                //lblInternacional.Text = adm.Lista.Count + "";
+                adm.CantidadInternacional(lblInternacional);
             }
             else {
                 lblInternacional.Text = "______________";
