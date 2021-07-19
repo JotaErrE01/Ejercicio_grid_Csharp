@@ -11,7 +11,7 @@ namespace _05_ejercicio_clase{
                 x = Convert.ToDouble(monto);
                 flag = true;
             }catch {
-                MessageBox.Show("Error: Existen campos mal insertados");
+                //MessageBox.Show("Error: Existen campos mal insertados");
                 //flag = false;
             }
             return flag;
@@ -48,7 +48,8 @@ namespace _05_ejercicio_clase{
             return x;
         }
 
-        internal double AReal(string monto){
+        internal double AReal(string monto)
+        {
             double x = 0;
             try{
                 x = Convert.ToDouble(monto);

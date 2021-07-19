@@ -54,5 +54,10 @@ namespace _05_ejercicio_clase.view
             FrmFiltrar filtar = new FrmFiltrar();
             filtar.ShowDialog();
         }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e){
+            frmFiltrarXNombre editar = new frmFiltrarXNombre();
+            editar.ShowDialog();
+        }
     }
 }

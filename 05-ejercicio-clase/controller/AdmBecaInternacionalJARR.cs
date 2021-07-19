@@ -12,6 +12,7 @@ namespace _05_ejercicio_clase.controller{
         List<Beca> lista = null;
         ValidacionJARR validacion = null;
         Beca beca = null;
+        int index;
 
         internal List<Beca> Lista { get => lista; set => lista = value; }
 
@@ -37,8 +38,131 @@ namespace _05_ejercicio_clase.controller{
             lblTotal.Text = i + "";
         }
 
-        internal void filtrar(string lugar, string monto, DataGridView dgvBecas, int v){
+        internal void Presentar(DataGridView dgvBecas, TextBox txtCedula, TextBox txtNombre, ComboBox cmbUniversidad, ComboBox cmbPaisCiudad, TextBox txtMonto, DateTimePicker dtpFechaViaje, TextBox txtTiempoEstudio, RadioButton rdbNacional, RadioButton rdbInternacional, PictureBox pbImage, Label lblPaisCiudad)
+        {
 
+            if(dgvBecas.SelectedRows.Count != 1){
+                MessageBox.Show("Seleccione una fila");
+                return;
+            }
+
+            index = validacion.AEntero(dgvBecas[0, dgvBecas.CurrentRow.Index].Value.ToString()) - 1;
+
+            Beca element = lista.ElementAt(index);
+
+            cmbPaisCiudad.Items.Clear();
+            cmbUniversidad.Items.Clear();
+
+            if (element.GetType() == typeof(BecaNacional)) {
+                rdbNacional.Checked = true;
+                CambiarNacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
+                cmbPaisCiudad.SelectedItem = ((BecaNacional)element).Ciudad;
+                dtpFechaViaje.Enabled = false;
+            }
+            else {
+                //rdbNacional.Checked = false;
+                rdbInternacional.Checked = true;
+                CambiarInternacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
+                cmbPaisCiudad.SelectedItem = ((BecaInternacional)element).Pais;
+                dtpFechaViaje.Value = ((BecaInternacional)element).FechaViajeIda.Date;
+                dtpFechaViaje.Enabled = true;
+            }
+            
+            txtCedula.Text = element.Cedula;
+            txtNombre.Text = element.Nombre;
+            cmbUniversidad.SelectedItem = (element).Universidad;
+            txtMonto.Text = element.Monto.ToString();
+            txtTiempoEstudio.Text = element.TiempoEstudio.ToString();
+            pbImage.ImageLocation = element.Ruta;
+
+        }
+
+        internal void Editar(string nombre, string cedula, string universidad, string monto, string pais, string tiempo, DateTime fecha, RadioButton rdbNacional, string rutaImagen){
+
+            if (rdbNacional.Checked){
+
+                double dMonto = validacion.AReal(monto);
+                int iTiempo = validacion.AEntero(tiempo);
+                BecaNacional becaNacional = new BecaNacional(nombre, cedula, pais, universidad, dMonto, iTiempo, rutaImagen);
+                //Lista.Add(becaNacional);
+                Lista.RemoveAt(index);
+                Lista.Insert(index, becaNacional);
+
+            }
+            else{
+
+                double dMonto = validacion.AReal(monto);
+                int iTiempo = validacion.AEntero(tiempo);
+                BecaInternacional becaInternacional = new BecaInternacional(nombre, cedula, pais, universidad, dMonto, iTiempo, fecha, rutaImagen);
+                //Lista.Add(becaInternacional);
+                Lista.Insert(index, becaInternacional);
+
+            }
+
+        }
+
+        internal void SeleccionarImagen(PictureBox pbImage){
+            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
+            ofdSeleccionar.Filter = "FotoPerfil|*.jpg; *.png";
+            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            ofdSeleccionar.Title = "Seleccionar Imagen";
+
+            if (ofdSeleccionar.ShowDialog() == DialogResult.OK)
+            {
+                //pbImage.Image = Image.FromFile(ofdSeleccionar.FileName);
+                pbImage.ImageLocation = ofdSeleccionar.FileName;
+            }
+        }
+
+        internal void FiltrarxNombre(string nombre, string monto, DataGridView dgvBecas)
+        {
+            //validar campos vacios
+            if (monto == "" && nombre == "") {
+                MessageBox.Show("El Nombre y el Monto son obligatorios");
+                return;
+            };
+
+            //limpiar tabla
+            dgvBecas.Rows.Clear();
+
+            int i = 1;
+
+            if (validacion.EsReal(monto)){
+                double dmonto = validacion.AReal(monto);
+                lista.ForEach( beca => {
+                    if (beca.Monto >= dmonto){
+                        ObtenerTipos(dgvBecas, i, beca,  nombre);
+                    }
+                    i++;
+                } );
+            }
+            else if(monto == "*"){
+                lista.ForEach(beca => {
+                    ObtenerTipos(dgvBecas, i, beca, nombre);
+                    i++;
+                });
+            }
+        }
+
+        internal void ObtenerTipos(DataGridView dgvBecas, int i, Beca beca, string nombre) {
+
+            if (beca.GetType() == typeof(BecaNacional)){
+                BecaNacional bn = (BecaNacional)beca;
+                if (bn.Nombre == nombre){
+                    dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bn.Ciudad, beca.Universidad, beca.Monto, beca.TiempoEstudio, "");
+                }
+            }
+
+            if (beca.GetType() == typeof(BecaInternacional)){
+                BecaInternacional bi = (BecaInternacional)beca;
+                if (bi.Nombre == nombre){
+                    dgvBecas.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
+                }
+            }
+        }
+
+        internal void filtrar(string lugar, string monto, DataGridView dgvBecas, int v){
+            
             //validar campos vacios
             if (monto == "" && lugar == "") return;
 
@@ -48,9 +172,8 @@ namespace _05_ejercicio_clase.controller{
             //limpiar tabla
             dgvBecas.Rows.Clear();
 
-            ValidacionJARR val = new ValidacionJARR();
             int i = 1;
-            double dmonto = val.AReal(monto);
+            double dmonto = validacion.AReal(monto);
             BecaInternacional bi = null;
             BecaNacional bn = null;
 
@@ -114,8 +237,7 @@ namespace _05_ejercicio_clase.controller{
             lblNacional.Text = $"{counter}";
         }
 
-        internal void Eliminar(DataGridView dgvBecas, int posicion, Label lblTotal)
-        {
+        internal void Eliminar(DataGridView dgvBecas, int posicion, Label lblTotal){
             dgvBecas.Rows.RemoveAt(posicion);//eliminando de la tabla
             lista.RemoveAt(posicion);//eliminando de la lista
             lblTotal.Text = lista.Count + "";

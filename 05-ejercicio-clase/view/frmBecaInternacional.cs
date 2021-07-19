@@ -71,15 +71,9 @@ namespace _05_ejercicio_clase{
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e){
-            OpenFileDialog ofdSeleccionar = new OpenFileDialog();
-            ofdSeleccionar.Filter = "FotoPerfil|*.jpg; *.png";
-            ofdSeleccionar.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            ofdSeleccionar.Title = "Seleccionar Imagen";
 
-            if (ofdSeleccionar.ShowDialog() == DialogResult.OK){
-                //pbImage.Image = Image.FromFile(ofdSeleccionar.FileName);
-                pbImage.ImageLocation = ofdSeleccionar.FileName;
-            }
+            admBecaInternacional.SeleccionarImagen(pbImage);
+
         }
     }
 }

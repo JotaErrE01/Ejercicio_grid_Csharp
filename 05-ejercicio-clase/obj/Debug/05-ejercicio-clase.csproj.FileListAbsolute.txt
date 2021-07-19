@@ -12,3 +12,4 @@ C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_0
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.view.frmListar.resources
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.view.frmVisualizarBecas.resources
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.view.FrmFiltrar.resources
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.view.frmFiltrarXNombre.resources
