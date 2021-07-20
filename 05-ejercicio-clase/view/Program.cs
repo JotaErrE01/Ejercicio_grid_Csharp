@@ -13,7 +13,7 @@ namespace _05_ejercicio_clase{
         [STAThread]
         static void Main(){
 
-            MessageBox.Show("Autor: Jonathan Ruiz\nFecha: 2021-06-25");
+            MessageBox.Show("Autor: Jonathan Ruiz\nFecha: 2021-07-19");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
