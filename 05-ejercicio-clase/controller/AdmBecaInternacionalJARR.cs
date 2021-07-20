@@ -12,7 +12,7 @@ namespace _05_ejercicio_clase.controller{
         List<Beca> lista = null;
         ValidacionJARR validacion = null;
         Beca beca = null;
-        int index;
+        int index = -1;
 
         internal List<Beca> Lista { get => lista; set => lista = value; }
 
@@ -35,7 +35,7 @@ namespace _05_ejercicio_clase.controller{
                 }
                 i++;
             });
-            lblTotal.Text = i + "";
+            lblTotal.Text = i - 1 + "";
         }
 
         internal void Presentar(DataGridView dgvBecas, TextBox txtCedula, TextBox txtNombre, ComboBox cmbUniversidad, ComboBox cmbPaisCiudad, TextBox txtMonto, DateTimePicker dtpFechaViaje, TextBox txtTiempoEstudio, RadioButton rdbNacional, RadioButton rdbInternacional, PictureBox pbImage, Label lblPaisCiudad)
@@ -79,6 +79,8 @@ namespace _05_ejercicio_clase.controller{
 
         internal void Editar(string nombre, string cedula, string universidad, string monto, string pais, string tiempo, DateTime fecha, RadioButton rdbNacional, string rutaImagen){
 
+            if (index == -1) return;
+
             if (rdbNacional.Checked){
 
                 double dMonto = validacion.AReal(monto);
@@ -95,6 +97,7 @@ namespace _05_ejercicio_clase.controller{
                 int iTiempo = validacion.AEntero(tiempo);
                 BecaInternacional becaInternacional = new BecaInternacional(nombre, cedula, pais, universidad, dMonto, iTiempo, fecha, rutaImagen);
                 //Lista.Add(becaInternacional);
+                Lista.RemoveAt(index);
                 Lista.Insert(index, becaInternacional);
 
             }

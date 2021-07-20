@@ -195,6 +195,7 @@ namespace _05_ejercicio_clase.view
             this.btnLimpiar.TabIndex = 16;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnSeleccionar
             // 
@@ -236,6 +237,7 @@ namespace _05_ejercicio_clase.view
             this.rdbInternacional.TabIndex = 0;
             this.rdbInternacional.Text = "Beca Internacional";
             this.rdbInternacional.UseVisualStyleBackColor = true;
+            this.rdbInternacional.CheckedChanged += new System.EventHandler(this.rdbInternacional_CheckedChanged);
             // 
             // rdbNacional
             // 
@@ -248,6 +250,7 @@ namespace _05_ejercicio_clase.view
             this.rdbNacional.TabStop = true;
             this.rdbNacional.Text = "Beca Nacional";
             this.rdbNacional.UseVisualStyleBackColor = true;
+            this.rdbNacional.CheckedChanged += new System.EventHandler(this.rdbNacional_CheckedChanged);
             // 
             // txtArea
             // 
@@ -295,6 +298,7 @@ namespace _05_ejercicio_clase.view
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(158, 20);
             this.txtMonto.TabIndex = 34;
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoB_KeyPress);
             // 
             // txtTiempoEstudio
             // 
@@ -302,6 +306,7 @@ namespace _05_ejercicio_clase.view
             this.txtTiempoEstudio.Name = "txtTiempoEstudio";
             this.txtTiempoEstudio.Size = new System.Drawing.Size(200, 20);
             this.txtTiempoEstudio.TabIndex = 33;
+            this.txtTiempoEstudio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTiempoEstudio_KeyPress);
             // 
             // txtNombre
             // 
@@ -309,6 +314,7 @@ namespace _05_ejercicio_clase.view
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(158, 20);
             this.txtNombre.TabIndex = 32;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreB_KeyPress);
             // 
             // txtCedula
             // 

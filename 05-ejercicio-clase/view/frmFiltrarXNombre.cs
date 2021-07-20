@@ -55,12 +55,35 @@ namespace _05_ejercicio_clase.view
             string nombre = txtNombre.Text.Trim(), cedula = txtCedula.Text, universidad = cmbUniversidad.Text, monto = txtMonto.Text, pais = cmbPaisCiudad.Text, tiempo = txtTiempoEstudio.Text, rutaImagen = pbImage.ImageLocation;
             DateTime fecha = dtpFechaViaje.Value.Date;
 
-            if (adm.EsCorrecto(nombre, cedula, universidad, monto, pais, tiempo, fecha, rutaImagen))
-            {
+            if (adm.EsCorrecto(nombre, cedula, universidad, monto, pais, tiempo, fecha, rutaImagen)){
 
                 adm.Editar(nombre, cedula, universidad, monto, pais, tiempo, fecha, rdbNacional, rutaImagen);
                 adm.Agregar(txtArea);
 
+            }
+        }
+
+        private void rdbInternacional_CheckedChanged(object sender, EventArgs e){
+            adm.CambiarInternacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
+            dtpFechaViaje.Enabled = true;
+        }
+
+        private void rdbNacional_CheckedChanged(object sender, EventArgs e){
+            adm.CambiarNacional(lblPaisCiudad, cmbPaisCiudad, cmbUniversidad);
+            dtpFechaViaje.Enabled = false;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e){
+            dgvBecas.Rows.Clear();
+            txtNombreB.Text = "";
+            txtMontoB.Text = "";
+        }
+
+        private void txtTiempoEstudio_KeyPress(object sender, KeyPressEventArgs e){
+            char c = e.KeyChar;
+            if (!char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back))){
+                e.Handled = true;
+                return;
             }
         }
     }
