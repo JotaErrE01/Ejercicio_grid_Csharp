@@ -17,7 +17,7 @@ namespace View
 
         public FrmFiltrarInternacionales(){
             InitializeComponent();
-            cmbPais.Items.Add();
+            //cmbPais.Items.Add();
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e){
