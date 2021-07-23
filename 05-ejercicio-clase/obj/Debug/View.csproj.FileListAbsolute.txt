@@ -1,5 +1,4 @@
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.csproj.AssemblyReference.cache
-C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.frmBecaInternacional.resources
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.FrmFiltrar.resources
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.frmFiltrarXNombre.resources
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.frmListar.resources
@@ -18,3 +17,4 @@ C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\bin\Debug\Mo
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\_05_ejercicio_clase.Properties.Resources.resources
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.csproj.CoreCompileInputs.cache
 C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.csproj.CopyComplete
+C:\Users\Jonathan\Desktop\POE\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.FrmBeca.resources
