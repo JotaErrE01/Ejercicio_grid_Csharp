@@ -9,14 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace View
-{
+namespace View{
     public partial class frmFiltrarXNombre : Form{
 
         AdmBeca adm = AdmBeca.GetAdm();
 
-        public frmFiltrarXNombre()
-        {
+        public frmFiltrarXNombre(){
             InitializeComponent();
         }
 

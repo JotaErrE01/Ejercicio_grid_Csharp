@@ -58,6 +58,12 @@
     <Compile Include="FrmFiltrar.Designer.cs">
       <DependentUpon>FrmFiltrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFiltrarInternacionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFiltrarInternacionales.Designer.cs">
+      <DependentUpon>FrmFiltrarInternacionales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFiltrarXNombre.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFiltrar.resx">
       <DependentUpon>FrmFiltrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFiltrarInternacionales.resx">
+      <DependentUpon>FrmFiltrarInternacionales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFiltrarXNombre.resx">
       <DependentUpon>frmFiltrarXNombre.cs</DependentUpon>

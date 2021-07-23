@@ -165,6 +165,46 @@ namespace Controller{
             }
         }
 
+        public void filtrarInternacionales(string pais, string dias, string monto, DataGridView dgvBecasInternacionales){
+
+            //validar campos vacios
+            if (pais == "" ||  monto == "" || dias == "") return;
+
+            //limpiar tabla
+            dgvBecasInternacionales.Rows.Clear();
+
+            int i = 1;
+            BecaInternacional bi = null;
+
+            if (validacion.EsReal(monto) || validacion.EsReal(dias)){
+                double dmonto = validacion.AReal(monto);
+
+                lista.ForEach(beca => {
+                    if (beca.Monto >= dmonto){
+                        ObtenerInternacionales(dgvBecasInternacionales, i, beca, pais, dias);
+                    }
+                    i++;
+                });
+            }
+        }
+
+        private void ObtenerInternacionales(DataGridView dgvBecasInternacionales, int i, Beca beca, string pais, string dias){
+
+            int diasBeca = validacion.AEntero(dias);
+
+            if (beca.GetType() == typeof(BecaInternacional)){
+                BecaInternacional bi = (BecaInternacional)beca;
+                if (bi.Nombre == pais || calcularDias(bi.FechaViajeIda) == diasBeca){
+                    dgvBecasInternacionales.Rows.Add(i, beca.Cedula, beca.Nombre, bi.Pais, beca.Universidad, beca.Monto, beca.TiempoEstudio, bi.FechaViajeIda.ToShortDateString());
+                }
+            }
+
+        }
+
+        private int calcularDias(DateTime fechaViajeIda){
+            return fechaViajeIda.Day - DateTime.Now.Day;
+        }
+
         public void filtrar(string lugar, string monto, DataGridView dgvBecas, int v){
             
             //validar campos vacios

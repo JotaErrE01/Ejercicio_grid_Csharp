@@ -71,9 +71,7 @@ namespace View{
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e){
-
-            //adm.SeleccionarImagen(pbImage);
-
+            adm.SeleccionarImagen(pbImage);
         }
     }
 }

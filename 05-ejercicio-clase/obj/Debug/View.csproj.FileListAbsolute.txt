@@ -38,3 +38,4 @@ C:\Users\Jonathan\Desktop\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.c
 C:\Users\Jonathan\Desktop\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.csproj.CopyComplete
 C:\Users\Jonathan\Desktop\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.exe
 C:\Users\Jonathan\Desktop\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\05-ejercicio-clase.pdb
+C:\Users\Jonathan\Desktop\05-ejercicio-clase\05-ejercicio-clase\obj\Debug\View.FrmFiltrarInternacionales.resources
