@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmBecaInternacional.cs">
+    <Compile Include="FrmBeca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBecaInternacional.Designer.cs">
-      <DependentUpon>frmBecaInternacional.cs</DependentUpon>
+    <Compile Include="FrmBeca.Designer.cs">
+      <DependentUpon>FrmBeca.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFiltrar.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmBecaInternacional.resx">
-      <DependentUpon>frmBecaInternacional.cs</DependentUpon>
+    <EmbeddedResource Include="FrmBeca.resx">
+      <DependentUpon>FrmBeca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFiltrar.resx">
       <DependentUpon>FrmFiltrar.cs</DependentUpon>
