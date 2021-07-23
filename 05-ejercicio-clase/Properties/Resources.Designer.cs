@@ -59,26 +59,5 @@ namespace _05_ejercicio_clase.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap storm_dragon_lee_sin_splash_art_8k_league_of_legends_lol_papel_pintado_3840x2400_9 {
-            get {
-                object obj = ResourceManager.GetObject("storm-dragon-lee-sin-splash-art-8k-league-of-legends-lol-papel-pintado-3840x2400_" +
-                        "9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Zed_Galaxy_Slayer_nueva_skin_1233486646_144129_1440x600 {
-            get {
-                object obj = ResourceManager.GetObject("Zed-Galaxy-Slayer-nueva-skin_1233486646_144129_1440x600", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
